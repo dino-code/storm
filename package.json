@@ -1,0 +1,19 @@
+{
+  "name": "storm",
+  "version": "1.0.0",
+  "description": "Taking the world by **storm**.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dino-code/storm.git"
+  },
+  "author": "Dino Becaj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dino-code/storm/issues"
+  },
+  "homepage": "https://github.com/dino-code/storm#readme"
+}
