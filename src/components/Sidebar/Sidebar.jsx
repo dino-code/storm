@@ -6,12 +6,21 @@ const Sidebar = ({ navigation, teams }) => {
     <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
       {/* Sidebar component, swap this element with another sidebar if you like */}
       <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-indigo-600 px-6 pb-4">
-        <div className="flex h-16 shrink-0 items-center">
-          <img
-            className="h-8 w-auto"
-            src="https://tailwindui.com/img/logos/mark.svg?color=white"
-            alt="Your Company"
-          />
+        <div className="flex h-16 shrink-0 items-center gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="yellow"
+            className="w-6 h-6"
+          >
+            <path
+              fillRule="evenodd"
+              d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z"
+              clipRule="evenodd"
+            />
+          </svg>
+
+          <h3 className="text-xl text-white">storm</h3>
         </div>
         <nav className="flex flex-1 flex-col">
           <ul role="list" className="flex flex-1 flex-col gap-y-7">
