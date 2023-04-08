@@ -14,8 +14,10 @@ const variantStyles = {
       'bg-slate-900 text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900',
     indigo:
       'bg-indigo-600 text-white hover:text-slate-100 hover:bg-indigo-500 active:bg-indigo-800 active:text-indigo-100 focus-visible:outline-indigo-600',
+    yellow:
+      'bg-yellow-300 text-slate-900 hover:text-slate-400 hover:bg-yellow-100 active:bg-yellow-800 active:text-slate-200 focus-visible:outline-yellow-600',
     white:
-      'bg-white text-slate-900 hover:bg-blue-50 active:bg-blue-200 active:text-slate-600 focus-visible:outline-white',
+      'bg-white text-slate-900 dark:text-white hover:bg-blue-50 active:bg-blue-200 active:text-slate-600 focus-visible:outline-white',
   },
   outline: {
     slate:

@@ -25,7 +25,7 @@ function CheckIcon({ className }) {
     <svg
       aria-hidden="true"
       className={clsx(
-        'h-6 w-6 flex-none fill-current stroke-current',
+        'h-6 w-6 flex-none fill-yellow-300 stroke-yellow-300',
         className
       )}
     >
@@ -83,7 +83,7 @@ function Plan({ name, price, description, href, features, featured = false }) {
       <Button
         href={href}
         variant={featured ? 'solid' : 'outline'}
-        color="white"
+        color={featured ? 'yellow' : 'white'}
         className="mt-8"
         aria-label={`Get started with the ${name} plan for ${price}`}
       >
@@ -95,21 +95,17 @@ function Plan({ name, price, description, href, features, featured = false }) {
 
 export function Pricing() {
   return (
-    <section
-      id="pricing"
-      aria-label="Pricing"
-      className="bg-slate-900 py-20 sm:py-32"
-    >
+    <section id="pricing" aria-label="Pricing" className=" py-20 sm:py-32">
       <Container>
         <div className="md:text-center">
-          <h2 className="font-display text-3xl tracking-tight text-white dark:text-slate-400 sm:text-4xl">
+          <h2 className="font-display text-3xl tracking-tight text-white dark:text-slate-200 sm:text-4xl">
             <span className="relative whitespace-nowrap">
-              <SwirlyDoodle className="absolute left-0 top-1/2 h-[1em] w-full fill-yellow-300/70" />
+              <SwirlyDoodle className="absolute left-0 top-1/2 h-[1em] w-full fill-yellow-300/30" />
               <span className="relative text-indigo-600">Simple pricing,</span>
             </span>{' '}
             for everyone.
           </h2>
-          <p className="mt-4 text-lg text-slate-400">
+          <p className="mt-4 text-lg text-slate-200">
             It doesn’t matter what size your business is, our software won’t
             work well for you.
           </p>
@@ -132,7 +128,7 @@ export function Pricing() {
             name="Spark Tier"
             price="$10/month"
             description="Perfect for small businesses and growing startups."
-            href="/register-basic"
+            href="/register"
             features={[
               'All Static Tier features',
               'Full access to the CRM system',
@@ -147,7 +143,7 @@ export function Pricing() {
             name="Lightning Tier"
             price="$25/month"
             description="Optimized for established businesses and scaling ventures."
-            href="/register-pro"
+            href="/register"
             features={[
               'All Spark Tier features',
               'Financial management tools',

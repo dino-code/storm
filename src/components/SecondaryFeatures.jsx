@@ -8,88 +8,125 @@ import screenshotContacts from '@/images/screenshots/contacts.png'
 import screenshotInventory from '@/images/screenshots/inventory.png'
 import screenshotProfitLoss from '@/images/screenshots/profit-loss.png'
 
-const features = [
+const featuress = [
   {
-    name: 'Reporting',
-    summary: 'Stay on top of things with always up-to-date reporting features.',
+    title: 'Idea Repository',
     description:
-      'We talked about reporting in the section above but we needed three items here, so mentioning it one more time for posterity.',
-    image: screenshotProfitLoss,
+      "Storm's idea repository allows you to note down potential ideas and associate them with contacts and resources, keeping everything in one place.",
+
     icon: function ReportingIcon() {
       let id = useId()
       return (
         <>
-          <defs>
-            <linearGradient
-              id={id}
-              x1="11.5"
-              y1={18}
-              x2={36}
-              y2="15.5"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop offset=".194" stopColor="#fff" />
-              <stop offset={1} stopColor="#6692F1" />
-            </linearGradient>
-          </defs>
-          <path
-            d="m30 15-4 5-4-11-4 18-4-11-4 7-4-5"
-            stroke={`url(#${id})`}
-            strokeWidth={2}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="h-6 w-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"
+            />
+          </svg>
         </>
       )
     },
   },
   {
-    name: 'Inventory',
-    summary:
-      'Never lose track of what’s in stock with accurate inventory tracking.',
+    title: 'The Incubator',
     description:
-      'We don’t offer this as part of our software but that statement is inarguably true. Accurate inventory tracking would help you for sure.',
+      "The Incubator is Storm's exclusive networking platform where you can engage with fellow entrepreneurs, share ideas, and discover potential partnerships.",
+  },
+]
+
+const features = [
+  {
+    name: 'Calendar Email Integration',
+    summary:
+      'Easily schedule meetings and appointments with email integration.',
+    description:
+      "Storm's calendar email integration allows you to send emails with embedded calendars, making it easy to coordinate with your contacts.",
+    image: screenshotProfitLoss,
+    icon: function CalEmailIcon() {
+      let id = useId()
+      return (
+        <>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="h-6 w-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z"
+            />
+          </svg>
+        </>
+      )
+    },
+  },
+  {
+    name: 'Storm CRM',
+    summary:
+      'Efficiently manage your contacts and relationships with Storm CRM.',
+    description:
+      'Our CRM system helps you categorize and track your contacts, making it easy to nurture and manage your professional relationships.',
     image: screenshotInventory,
-    icon: function InventoryIcon() {
+    icon: function CRMIcon() {
+      let id = useId()
       return (
         <>
-          <path
-            opacity=".5"
-            d="M8 17a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2Z"
-            fill="#fff"
-          />
-          <path
-            opacity=".3"
-            d="M8 24a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2Z"
-            fill="#fff"
-          />
-          <path
-            d="M8 10a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2Z"
-            fill="#fff"
-          />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="h-6 w-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"
+            />
+          </svg>
         </>
       )
     },
   },
   {
-    name: 'Contacts',
+    name: 'The Incubator',
     summary:
-      'Organize all of your contacts, service providers, and invoices in one place.',
+      'Connect and collaborate with like-minded entrepreneurs on our networking platform.',
     description:
-      'This also isn’t actually a feature, it’s just some friendly advice. We definitely recommend that you do this, you’ll feel really organized and professional.',
+      "The Incubator is Storm's exclusive networking platform where you can engage with fellow entrepreneurs, share ideas, and discover potential partnerships.",
     image: screenshotContacts,
-    icon: function ContactsIcon() {
+    icon: function IncubatorIcon() {
+      let id = useId()
       return (
         <>
-          <path
-            opacity=".5"
-            d="M25.778 25.778c.39.39 1.027.393 1.384-.028A11.952 11.952 0 0 0 30 18c0-6.627-5.373-12-12-12S6 11.373 6 18c0 2.954 1.067 5.659 2.838 7.75.357.421.993.419 1.384.028.39-.39.386-1.02.036-1.448A9.959 9.959 0 0 1 8 18c0-5.523 4.477-10 10-10s10 4.477 10 10a9.959 9.959 0 0 1-2.258 6.33c-.35.427-.354 1.058.036 1.448Z"
-            fill="#fff"
-          />
-          <path
-            d="M12 28.395V28a6 6 0 0 1 12 0v.395A11.945 11.945 0 0 1 18 30c-2.186 0-4.235-.584-6-1.605ZM21 16.5c0-1.933-.5-3.5-3-3.5s-3 1.567-3 3.5 1.343 3.5 3 3.5 3-1.567 3-3.5Z"
-            fill="#fff"
-          />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="h-6 w-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
+            />
+          </svg>
         </>
       )
     },
@@ -105,7 +142,7 @@ function Feature({ feature, isActive, className, ...props }) {
       <div
         className={clsx(
           'w-9 rounded-lg',
-          isActive ? 'bg-indigo-600' : 'bg-slate-500'
+          isActive ? 'bg-yellow-300' : 'bg-slate-500'
         )}
       >
         <svg aria-hidden="true" className="h-9 w-9" fill="none">
@@ -115,7 +152,7 @@ function Feature({ feature, isActive, className, ...props }) {
       <h3
         className={clsx(
           'mt-6 text-sm font-medium',
-          isActive ? 'text-indigo-600' : 'text-slate-600'
+          isActive ? 'text-yellow-300' : 'text-slate-600'
         )}
       >
         {feature.name}
@@ -123,12 +160,19 @@ function Feature({ feature, isActive, className, ...props }) {
       <p
         className={clsx(
           'mt-2 font-display text-xl',
-          isActive ? 'text-yellow-300' : 'text-slate-600'
+          isActive ? 'text-slate-200' : 'text-slate-600'
         )}
       >
         {feature.summary}
       </p>
-      <p className="mt-4 text-sm text-slate-600">{feature.description}</p>
+      <p
+        className={clsx(
+          'mt-4 text-sm text-slate-600',
+          isActive ? 'dark:text-slate-400' : 'text-slate-600'
+        )}
+      >
+        {feature.description}
+      </p>
     </div>
   )
 }
@@ -216,16 +260,17 @@ export function SecondaryFeatures() {
     <section
       id="secondary-features"
       aria-label="Features for simplifying everyday business tasks"
-      className="pb-14 pt-20 sm:pb-20 sm:pt-32 lg:pb-32"
+      className="bg-black pb-14 pt-20 sm:pb-20 sm:pt-32 lg:pb-32"
     >
       <Container>
-        <div className="mx-auto max-w-2xl md:text-center">
-          <h2 className="font-display text-3xl tracking-tight text-slate-900 dark:text-slate-400 sm:text-4xl">
-            Simplify everyday business tasks.
+        <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
+          <h2 className="font-display text-3xl tracking-tight text-white dark:text-slate-200 sm:text-4xl md:text-5xl">
+            <span className="font-bold text-yellow-300">Empower</span> your
+            ideas with Storm.
           </h2>
-          <p className="mt-4 text-lg tracking-tight text-slate-700 dark:text-slate-500">
-            Because you’d probably be a little confused if we suggested you
-            complicate your everyday business tasks instead.
+          <p className="mt-6 text-lg tracking-tight text-slate-200">
+            Unleash your creativity and forge strong connections with our suite
+            of tools designed to spark innovation and collaboration.
           </p>
         </div>
         <FeaturesMobile />

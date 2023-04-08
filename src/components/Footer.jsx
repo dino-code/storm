@@ -3,13 +3,14 @@ import Link from 'next/link'
 import { Container } from '@/components/Container'
 import { Logo } from '@/components/Logo'
 import { NavLink } from '@/components/NavLink'
+import { LogoIcon } from './LogoIcon'
 
 export function Footer() {
   return (
-    <footer className="bg-slate-50">
+    <footer className="bg-slate-50 dark:bg-black">
       <Container>
         <div className="py-16">
-          <Logo className="mx-auto h-10 w-auto" />
+          <LogoIcon className="mx-auto h-12 w-auto" />
           <nav className="mt-10 text-sm" aria-label="quick links">
             <div className="-my-1 flex justify-center gap-x-6">
               <NavLink href="#features">Features</NavLink>
