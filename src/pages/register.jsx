@@ -1,3 +1,4 @@
+import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 
@@ -5,8 +6,25 @@ import { AuthLayout } from '@/components/AuthLayout'
 import { Button } from '@/components/Button'
 import { SelectField, TextField } from '@/components/Fields'
 import { Logo } from '@/components/Logo'
+import { useRegisterUserMutation } from '@/api/stormApi'
 
 export default function Register() {
+  // Add this line
+  const [registerUser, { isLoading }] = useRegisterUserMutation()
+
+  // Add this function
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const formData = new FormData(e.target)
+    const data = Object.fromEntries(formData)
+    try {
+      const result = await registerUser(data).unwrap()
+      // Handle successful registration, e.g., redirecting to a new page
+    } catch (error) {
+      // Handle registration error, e.g., displaying an error message
+    }
+  }
+
   return (
     <>
       <Head>
@@ -34,7 +52,7 @@ export default function Register() {
           </div>
         </div>
         <form
-          action="#"
+          onSubmit={handleSubmit}
           className="mt-6 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2"
         >
           <TextField
@@ -55,6 +73,15 @@ export default function Register() {
           />
           <TextField
             className="col-span-full"
+            label="Username"
+            id="username"
+            name="username"
+            type="text"
+            autoComplete="username"
+            required
+          />
+          <TextField
+            className="col-span-full"
             label="Email address"
             id="email"
             name="email"
@@ -71,23 +98,13 @@ export default function Register() {
             autoComplete="new-password"
             required
           />
-          <SelectField
-            className="col-span-full"
-            label="How did you hear about us?"
-            id="referral_source"
-            name="referral_source"
-          >
-            <option>AltaVista search</option>
-            <option>Super Bowl commercial</option>
-            <option>Our route 34 city bus ad</option>
-            <option>The “Never Use This” podcast</option>
-          </SelectField>
           <div className="col-span-full">
             <Button
               type="submit"
               variant="solid"
               color="indigo"
               className="w-full"
+              disabled={isLoading}
             >
               <span>
                 Sign up <span aria-hidden="true">&rarr;</span>

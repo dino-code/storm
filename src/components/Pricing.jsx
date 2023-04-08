@@ -118,9 +118,9 @@ export function Pricing() {
             href="/register"
             features={[
               'Calendar email integration',
-              'Basic CRM system',
+              'Basic Storm CRM',
               'Basic idea repository',
-              'Networking platform access',
+              'Incubator access',
             ]}
           />
           <Plan
@@ -131,7 +131,7 @@ export function Pricing() {
             href="/register"
             features={[
               'All Static Tier features',
-              'Full access to the CRM system',
+              'Full access to the Storm CRM',
               'Enhanced idea repository',
               'Task management',
               'Document management',
@@ -149,7 +149,7 @@ export function Pricing() {
               'Financial management tools',
               'Analytics and reporting',
               'Market research resources',
-              'AI-powered suggestions',
+              'AI-powered resource suggestions',
               'Priority customer support',
             ]}
           />
