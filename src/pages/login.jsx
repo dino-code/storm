@@ -3,8 +3,33 @@ import Link from 'next/link'
 
 import { LockClosedIcon } from '@heroicons/react/20/solid'
 import { LogoIcon } from '@/components/LogoIcon'
+import { useLoginMutation } from '@/api/stormApi'
+import { useRouter } from 'next/router'
+import { useUser } from '@/contexts/UserContext'
 
 export default function Login() {
+  const [login, { isLoading }] = useLoginMutation()
+  const { setUser } = useUser()
+  const router = useRouter()
+
+  async function handleSubmit(event) {
+    event.preventDefault()
+
+    const username = event.target.username.value
+    const password = event.target.password.value
+
+    try {
+      const response = await login({ username, password }).unwrap()
+      setUser({ accessToken: response.access, user: response.user })
+      // Redirect the user to the dashboard or another authenticated page
+      router.push('/dashboard')
+      console.log('Login successful:', response)
+    } catch (error) {
+      console.error('Login failed:', error)
+      // handle login failure, e.g. show an error message
+    }
+  }
+
   return (
     <>
       <Head>
@@ -29,21 +54,25 @@ export default function Login() {
               </a>
             </p>
           </div>
-          <form className="mt-8 space-y-6" action="#" method="POST">
+          <form
+            className="mt-8 space-y-6"
+            onSubmit={handleSubmit}
+            method="POST"
+          >
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="-space-y-px rounded-md shadow-sm">
               <div>
-                <label htmlFor="email-address" className="sr-only">
+                <label htmlFor="username" className="sr-only">
                   Email address
                 </label>
                 <input
-                  id="email-address"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
+                  id="username"
+                  name="username"
+                  type="username"
+                  autoComplete="username"
                   required
                   className="relative block w-full rounded-t-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-400 dark:text-gray-300 sm:text-sm sm:leading-6"
-                  placeholder="Email address"
+                  placeholder="Username"
                 />
               </div>
               <div>

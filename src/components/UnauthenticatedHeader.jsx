@@ -88,7 +88,7 @@ function MobileNavigation() {
   )
 }
 
-export function Header() {
+export function UnauthenticatedHeader() {
   return (
     <header className="py-10">
       <Container>

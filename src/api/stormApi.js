@@ -11,7 +11,14 @@ export const stormApi = createApi({
         body: data,
       }),
     }),
+    login: builder.mutation({
+      query: (credentials) => ({
+        url: '/api/login/',
+        method: 'POST',
+        body: credentials,
+      }),
+    }),
   }),
 })
 
-export const { useRegisterUserMutation } = stormApi
+export const { useRegisterUserMutation, useLoginMutation } = stormApi

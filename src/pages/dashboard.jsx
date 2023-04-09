@@ -2,27 +2,24 @@ import Head from 'next/head'
 
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/UnauthenticatedHeader'
-import { Hero } from '@/components/Hero'
-import { Pricing } from '@/components/Pricing'
-import { SecondaryFeatures } from '@/components/SecondaryFeatures'
+import AuthenticatedPage from '@/components/AuthenticatedPage'
+import ApplicationShell from '@/components/ApplicationShell'
 
-export default function Home() {
+export default function Dashboard() {
   return (
     <>
       <Head>
-        <title>STORM - Entreprenurship made organized</title>
+        <title>Storm - App</title>
         <meta
           name="description"
           content="No more keeping track of emails, appointments, contacts, and leads. We provide the tools you need to focus on changing the world."
         />
       </Head>
-      <Header />
       <main>
-        <Hero />
-        <SecondaryFeatures />
-        <Pricing />
+        <ApplicationShell>
+          <p>Welcome</p>
+        </ApplicationShell>
       </main>
-      <Footer />
     </>
   )
 }
