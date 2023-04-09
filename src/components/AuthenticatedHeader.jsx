@@ -13,6 +13,8 @@ import {
   UsersIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/react/20/solid'
+import { useAuth } from '@/hooks/auth'
+import { useLogoutMutation } from '@/api/stormApi'
 
 const navigation = [
   { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
@@ -27,12 +29,28 @@ const teams = [
   { id: 2, name: 'Tailwind Labs', href: '#', initial: 'T', current: false },
   { id: 3, name: 'Workcation', href: '#', initial: 'W', current: false },
 ]
-const userNavigation = [
-  { name: 'Your profile', href: '#' },
-  { name: 'Sign out', href: '#' },
-]
 
 const AuthenticatedHeader = () => {
+  const user = useAuth()
+  const [logout, { isLoading }] = useLogoutMutation()
+  console.log(user)
+  const handleLogout = async () => {
+    try {
+      const refreshToken = // Get the refresh token from your storage
+        await logout(refreshToken).unwrap()
+      setUser(null)
+      // Remove the tokens from your storage
+      // Redirect the user to the login page
+    } catch (error) {
+      console.error('Logout failed:', error)
+    }
+  }
+
+  const userNavigation = [
+    { name: 'Your profile', href: '#' },
+    { name: 'Sign out', href: '#', onClick: handleLogout },
+  ]
+
   return (
     <div className="sticky top-0 z-40 lg:mx-auto lg:max-w-7xl lg:px-8">
       <div className="flex h-16 items-center gap-x-4 border-b border-gray-200 bg-white px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-0 lg:shadow-none">
@@ -94,7 +112,7 @@ const AuthenticatedHeader = () => {
                     className="ml-4 text-sm font-semibold leading-6 text-gray-900"
                     aria-hidden="true"
                   >
-                    Tom Cook
+                    {`${user?.user?.first_name} ${user?.user?.last_name}`}
                   </span>
                   <ChevronDownIcon
                     className="ml-2 h-5 w-5 text-gray-400"
@@ -121,6 +139,7 @@ const AuthenticatedHeader = () => {
                             active ? 'bg-gray-50' : '',
                             'block px-3 py-1 text-sm leading-6 text-gray-900'
                           )}
+                          onClick={item.onClick ? () => item.onClick() : null}
                         >
                           {item.name}
                         </a>

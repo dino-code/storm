@@ -18,7 +18,15 @@ export const stormApi = createApi({
         body: credentials,
       }),
     }),
+    logout: builder.mutation({
+      query: (refreshToken) => ({
+        url: 'api/logout/',
+        method: 'POST',
+        body: { refresh: refreshToken },
+      }),
+    }),
   }),
 })
 
-export const { useRegisterUserMutation, useLoginMutation } = stormApi
+export const { useRegisterUserMutation, useLoginMutation, useLogoutMutation } =
+  stormApi

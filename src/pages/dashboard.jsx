@@ -1,8 +1,5 @@
 import Head from 'next/head'
 
-import { Footer } from '@/components/Footer'
-import { Header } from '@/components/UnauthenticatedHeader'
-import AuthenticatedPage from '@/components/AuthenticatedPage'
 import ApplicationShell from '@/components/ApplicationShell'
 
 export default function Dashboard() {

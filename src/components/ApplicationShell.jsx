@@ -35,7 +35,7 @@ const userNavigation = [
   { name: 'Sign out', href: '#' },
 ]
 
-export default function ApplicationShell() {
+export default function ApplicationShell({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
@@ -273,10 +273,9 @@ export default function ApplicationShell() {
 
         <div className="lg:pl-72">
           <AuthenticatedHeader />
-
           <main className="py-10">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              {/* Your content */}
+              {children}
             </div>
           </main>
         </div>
