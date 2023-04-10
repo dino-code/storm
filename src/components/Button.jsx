@@ -15,15 +15,19 @@ const variantStyles = {
     indigo:
       'bg-indigo-600 text-white hover:text-slate-100 hover:bg-indigo-500 active:bg-indigo-800 active:text-indigo-100 focus-visible:outline-indigo-600',
     yellow:
-      'bg-yellow-300 text-slate-900 hover:text-slate-400 hover:bg-yellow-100 active:bg-yellow-800 active:text-slate-200 focus-visible:outline-yellow-600',
+      'bg-yellow-300 hover:text-slate-700 hover:bg-yellow-200 active:bg-yellow-200 active:text-slate-700 focus-visible:outline-yellow-600',
     white:
-      'bg-white text-slate-900 dark:text-white hover:bg-blue-50 active:bg-blue-200 active:text-slate-600 focus-visible:outline-white',
+      'bg-white text-slate-800 hover:bg-blue-50 active:bg-blue-200 active:text-slate-600 focus-visible:outline-white',
   },
   outline: {
     slate:
-      'ring-slate-200 text-slate-700 dark:text-slate-500 hover:text-slate-900 dark:text-slate-400 hover:ring-slate-300 active:bg-slate-100 active:text-slate-600 focus-visible:outline-blue-600 focus-visible:ring-slate-300',
+      'ring-slate-200 hover:text-slate-600 hover:ring-slate-300 active:bg-slate-100 active:text-slate-600 focus-visible:outline-blue-600 focus-visible:ring-slate-300',
     white:
-      'ring-slate-700 text-white hover:ring-slate-500 active:ring-slate-700 active:text-slate-400 focus-visible:outline-white',
+      'ring-yellow-400 hover:ring-slate-500 active:ring-slate-700 hover:text-slate-600 active:text-slate-400 focus-visible:outline-white',
+    yellow:
+      'ring-indigo-600 dark:ring-yellow-300 hover:ring-yellow-200 text-indigo-600 dark:hover:text-indigo-500 dark:text-yellow-300 hover:text-yellow-200 active:text-yellow-300 focus-visible:outline-yellow-600',
+    indigo:
+      'ring-indigo-600 text-indigo-600 hover:ring-indigo-500 active:ring-indigo-400 hover:text-indigo-500 active:text-indigo-400 focus-visible:outline-indigo-600',
   },
 }
 

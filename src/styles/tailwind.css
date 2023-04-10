@@ -5,3 +5,15 @@
 #__next {
   min-height: 100%;
 }
+
+@layer utilities {
+  /* Default text color */
+  .text-default {
+    color: slate-800;
+  }
+
+  /* Dark mode variant of default text color */
+  .dark .text-default {
+    color: white;
+  }
+}

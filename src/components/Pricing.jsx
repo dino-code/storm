@@ -20,12 +20,15 @@ function SwirlyDoodle({ className }) {
   )
 }
 
-function CheckIcon({ className }) {
+function CheckIcon({ className, featured }) {
   return (
     <svg
       aria-hidden="true"
       className={clsx(
-        'h-6 w-6 flex-none fill-yellow-300 stroke-yellow-300',
+        'h-6 w-6 flex-none',
+        featured
+          ? 'fill-yellow-300 stroke-yellow-300'
+          : 'fill-indigo-600 stroke-indigo-600 dark:fill-yellow-300 dark:stroke-yellow-300',
         className
       )}
     >
@@ -54,28 +57,47 @@ function Plan({ name, price, description, href, features, featured = false }) {
         featured ? 'order-first bg-indigo-600 py-8 lg:order-none' : 'lg:py-8'
       )}
     >
-      <h3 className="mt-5 font-display text-lg text-yellow-300">{name}</h3>
+      <h3
+        className={clsx(
+          'mt-5 font-display text-lg font-medium',
+          featured ? 'text-yellow-300' : 'text-indigo-600 dark:text-yellow-300'
+        )}
+      >
+        {name}
+      </h3>
       <p
         className={clsx(
           'mt-2 text-base',
-          featured ? 'text-white' : 'text-slate-400'
+          featured ? 'text-white' : 'text-slate-800 dark:text-white'
         )}
       >
         {description}
       </p>
-      <p className="order-first font-display text-5xl font-light tracking-tight text-white">
+      <p
+        className={clsx(
+          'order-first font-display text-5xl font-light tracking-tight',
+          featured ? 'text-white' : 'text-slate-800 dark:text-white'
+        )}
+      >
         {price}
       </p>
       <ul
         role="list"
         className={clsx(
           'order-last mt-10 flex flex-col gap-y-3 text-sm',
-          featured ? 'text-white' : 'text-slate-200'
+          featured ? 'text-white' : 'text-slate-800 dark:text-white'
         )}
       >
         {features.map((feature) => (
           <li key={feature} className="flex">
-            <CheckIcon className={featured ? 'text-white' : 'text-slate-400'} />
+            <CheckIcon
+              className={
+                featured
+                  ? 'fill-yellow-300 stroke-yellow-300 text-white'
+                  : 'text-slate-800 dark:text-white'
+              }
+              featured={featured}
+            />
             <span className="ml-4">{feature}</span>
           </li>
         ))}
@@ -83,7 +105,7 @@ function Plan({ name, price, description, href, features, featured = false }) {
       <Button
         href={href}
         variant={featured ? 'solid' : 'outline'}
-        color={featured ? 'yellow' : 'white'}
+        color={'yellow'}
         className="mt-8"
         aria-label={`Get started with the ${name} plan for ${price}`}
       >
@@ -98,16 +120,17 @@ export function Pricing() {
     <section id="pricing" aria-label="Pricing" className=" py-20 sm:py-32">
       <Container>
         <div className="md:text-center">
-          <h2 className="font-display text-3xl tracking-tight text-white dark:text-slate-200 sm:text-4xl">
+          <h2 className="font-display text-3xl tracking-tight dark:text-white sm:text-4xl">
             <span className="relative whitespace-nowrap">
               <SwirlyDoodle className="absolute left-0 top-1/2 h-[1em] w-full fill-yellow-300/30" />
               <span className="relative text-indigo-600">Simple pricing,</span>
             </span>{' '}
             for everyone.
           </h2>
-          <p className="mt-4 text-lg text-slate-200">
-            It doesn’t matter what size your business is, our software won’t
-            work well for you.
+          <p className="mt-4 text-lg dark:text-white">
+            Whether you're an individual looking to track their efforts, or a
+            budding startup looking to get organized, our tools will help you
+            get organized.
           </p>
         </div>
         <div className="-mx-4 mt-16 grid max-w-2xl grid-cols-1 gap-y-10 sm:mx-auto lg:-mx-8 lg:max-w-none lg:grid-cols-3 xl:mx-0 xl:gap-x-8">
