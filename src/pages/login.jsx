@@ -52,7 +52,7 @@ export default function Login() {
               Or{' '}
               <Link
                 href="/register"
-                className="font-medium text-indigo-600 hover:text-indigo-500"
+                className="font-medium text-indigo-500 hover:text-indigo-400"
               >
                 start your 1-month free trial
               </Link>
@@ -101,7 +101,7 @@ export default function Login() {
                   id="remember-me"
                   name="remember-me"
                   type="checkbox"
-                  className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                  className="h-4 w-4 rounded border-gray-300 text-indigo-500 focus:ring-indigo-500"
                 />
                 <label
                   htmlFor="remember-me"
@@ -114,7 +114,7 @@ export default function Login() {
               <div className="text-sm">
                 <a
                   href="#"
-                  className="font-medium text-indigo-600 hover:text-indigo-500"
+                  className="font-medium text-indigo-500 hover:text-indigo-400"
                 >
                   Forgot your password?
                 </a>
@@ -124,11 +124,11 @@ export default function Login() {
             <div>
               <button
                 type="submit"
-                className="group relative flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="group relative flex w-full justify-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
               >
                 <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                   <LockClosedIcon
-                    className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400"
+                    className="h-5 w-5 text-indigo-600 group-hover:text-indigo-500"
                     aria-hidden="true"
                   />
                 </span>

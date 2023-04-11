@@ -16,6 +16,7 @@ import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 import { LogoIcon } from './LogoIcon'
 import { classNames } from '@/utils/utils'
 import AuthenticatedHeader from './AuthenticatedHeader'
+import Link from 'next/link'
 
 const navigation = [
   { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
@@ -112,16 +113,16 @@ export default function ApplicationShell({ children }) {
                                   href={item.href}
                                   className={classNames(
                                     item.current
-                                      ? 'bg-slate-200 text-indigo-600 dark:bg-slate-800'
-                                      : 'text-gray-700 hover:bg-slate-200 hover:text-indigo-600 dark:hover:bg-slate-700 dark:hover:text-indigo-700',
+                                      ? 'bg-slate-200 text-indigo-500 dark:bg-slate-800'
+                                      : 'text-gray-700 hover:bg-slate-200 hover:text-indigo-500 dark:hover:bg-slate-700 dark:hover:text-indigo-700',
                                     'group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6'
                                   )}
                                 >
                                   <item.icon
                                     className={classNames(
                                       item.current
-                                        ? 'text-indigo-600'
-                                        : 'text-slate-700 group-hover:text-indigo-600 dark:text-slate-200 dark:group-hover:text-indigo-700',
+                                        ? 'text-indigo-500'
+                                        : 'text-slate-700 group-hover:text-indigo-500 dark:text-slate-200 dark:group-hover:text-indigo-700',
                                       'h-6 w-6 shrink-0'
                                     )}
                                     aria-hidden="true"
@@ -143,16 +144,16 @@ export default function ApplicationShell({ children }) {
                                   href={team.href}
                                   className={classNames(
                                     team.current
-                                      ? 'bg-slate-200 text-indigo-600'
-                                      : 'text-gray-700 hover:bg-slate-100 hover:text-indigo-600',
+                                      ? 'bg-slate-200 text-indigo-500'
+                                      : 'text-gray-700 hover:bg-slate-100 hover:text-indigo-500',
                                     'group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6'
                                   )}
                                 >
                                   <span
                                     className={classNames(
                                       team.current
-                                        ? 'border-indigo-600 text-indigo-600'
-                                        : 'border-gray-200 text-slate-700 group-hover:border-indigo-600 group-hover:text-indigo-600 dark:text-slate-200',
+                                        ? 'border-indigo-500 text-indigo-500'
+                                        : 'border-gray-200 text-slate-700 group-hover:border-indigo-500 group-hover:text-indigo-500 dark:text-slate-200',
                                       'flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border bg-white text-[0.625rem] font-medium'
                                     )}
                                   >
@@ -167,10 +168,10 @@ export default function ApplicationShell({ children }) {
                         <li className="mt-auto">
                           <a
                             href="#"
-                            className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-indigo-600"
+                            className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-indigo-500"
                           >
                             <Cog6ToothIcon
-                              className="h-6 w-6 shrink-0 text-gray-400 group-hover:text-indigo-600"
+                              className="h-6 w-6 shrink-0 text-gray-400 group-hover:text-indigo-500"
                               aria-hidden="true"
                             />
                             Settings
@@ -202,16 +203,16 @@ export default function ApplicationShell({ children }) {
                           href={item.href}
                           className={classNames(
                             item.current
-                              ? 'bg-slate-100 text-indigo-600 dark:bg-slate-800'
-                              : 'text-slate-700 hover:bg-slate-100  hover:text-indigo-600 dark:text-slate-200 dark:hover:bg-slate-700 dark:hover:text-indigo-500',
+                              ? 'bg-slate-100 text-indigo-500 dark:bg-slate-800'
+                              : 'text-slate-700 hover:bg-slate-100  hover:text-indigo-500 dark:text-slate-200 dark:hover:bg-slate-700 dark:hover:text-indigo-500',
                             'group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6'
                           )}
                         >
                           <item.icon
                             className={classNames(
                               item.current
-                                ? 'text-indigo-600'
-                                : 'text-slate-700 group-hover:text-indigo-600 dark:text-slate-200 dark:group-hover:text-indigo-500',
+                                ? 'text-indigo-500'
+                                : 'text-slate-700 group-hover:text-indigo-500 dark:text-slate-200 dark:group-hover:text-indigo-500',
                               'h-6 w-6 shrink-0'
                             )}
                             aria-hidden="true"
@@ -233,16 +234,16 @@ export default function ApplicationShell({ children }) {
                           href={team.href}
                           className={classNames(
                             team.current
-                              ? 'text-indigo-600 hover:bg-slate-100'
-                              : 'text-slate-700 hover:bg-slate-100 hover:text-indigo-600 dark:text-slate-200 dark:hover:bg-slate-700 dark:hover:text-indigo-500',
+                              ? 'text-indigo-500 hover:bg-slate-100'
+                              : 'text-slate-700 hover:bg-slate-100 hover:text-indigo-500 dark:text-slate-200 dark:hover:bg-slate-700 dark:hover:text-indigo-500',
                             'group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6'
                           )}
                         >
                           <span
                             className={classNames(
                               team.current
-                                ? 'border-indigo-600 text-indigo-600'
-                                : 'border-slate-400 text-slate-700 group-hover:border-indigo-600 group-hover:text-indigo-600 ',
+                                ? 'border-indigo-500 text-indigo-500'
+                                : 'border-slate-400 text-slate-700 group-hover:border-indigo-500 group-hover:text-indigo-500 ',
                               'flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border bg-white text-[0.625rem] font-medium'
                             )}
                           >
@@ -255,16 +256,16 @@ export default function ApplicationShell({ children }) {
                   </ul>
                 </li>
                 <li className="mt-auto">
-                  <a
-                    href="#"
-                    className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-slate-700 hover:bg-slate-100 hover:text-indigo-600 dark:text-slate-200 dark:hover:bg-slate-700 dark:hover:text-indigo-500"
+                  <Link
+                    href="/profile"
+                    className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-slate-700 hover:bg-slate-100 hover:text-indigo-500 dark:text-slate-200 dark:hover:bg-slate-700 dark:hover:text-indigo-500"
                   >
                     <Cog6ToothIcon
-                      className="h-6 w-6 shrink-0 text-slate-700 group-hover:text-indigo-600 dark:text-slate-200 dark:group-hover:text-indigo-500"
+                      className="h-6 w-6 shrink-0 text-slate-700 group-hover:text-indigo-500 dark:text-slate-200 dark:group-hover:text-indigo-500"
                       aria-hidden="true"
                     />
                     Settings
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>

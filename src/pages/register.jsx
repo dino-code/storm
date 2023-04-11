@@ -9,7 +9,6 @@ import { Logo } from '@/components/Logo'
 import { useRegisterUserMutation } from '@/api/stormApi'
 import { useRouter } from 'next/router'
 import { useUser } from '@/contexts/UserContext'
-import GeneralInput from '@/components/GeneralInput'
 
 export default function Register() {
   // Add this line
