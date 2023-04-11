@@ -19,9 +19,12 @@ export const stormApi = createApi({
       }),
     }),
     logout: builder.mutation({
-      query: (refreshToken) => ({
+      query: ({ accessToken, refreshToken }) => ({
         url: 'api/logout/',
         method: 'POST',
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
         body: { refresh: refreshToken },
       }),
     }),

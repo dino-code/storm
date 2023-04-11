@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 
@@ -7,11 +7,16 @@ import { Button } from '@/components/Button'
 import { SelectField, TextField } from '@/components/Fields'
 import { Logo } from '@/components/Logo'
 import { useRegisterUserMutation } from '@/api/stormApi'
+import { useRouter } from 'next/router'
+import { useUser } from '@/contexts/UserContext'
+import GeneralInput from '@/components/GeneralInput'
 
 export default function Register() {
   // Add this line
   const [registerUser, { isLoading }] = useRegisterUserMutation()
-
+  const { setUser } = useUser()
+  const [error, setError] = useState(null)
+  const router = useRouter()
   // Add this function
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -20,8 +25,18 @@ export default function Register() {
     try {
       const result = await registerUser(data).unwrap()
       // Handle successful registration, e.g., redirecting to a new page
+      setUser({
+        accessToken: result.access,
+        user: result.user,
+        refreshToken: result.refresh,
+      })
+      // Redirect the user to the dashboard or another authenticated page
+      router.push('/dashboard')
+      console.log('Login successful:', result)
     } catch (error) {
       // Handle registration error, e.g., displaying an error message
+      console.log(error)
+      setError(error.data)
     }
   }
 
@@ -78,6 +93,7 @@ export default function Register() {
             name="username"
             type="text"
             autoComplete="username"
+            error={error?.username}
             required
           />
           <TextField

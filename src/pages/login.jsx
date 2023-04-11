@@ -20,7 +20,11 @@ export default function Login() {
 
     try {
       const response = await login({ username, password }).unwrap()
-      setUser({ accessToken: response.access, user: response.user })
+      setUser({
+        accessToken: response.access,
+        user: response.user,
+        refreshToken: response.refresh,
+      })
       // Redirect the user to the dashboard or another authenticated page
       router.push('/dashboard')
       console.log('Login successful:', response)
@@ -41,17 +45,17 @@ export default function Login() {
             <Link href="/" aria-label="Home">
               <LogoIcon className="mx-auto h-16 w-auto" />
             </Link>
-            <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-300">
+            <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-slate-700 dark:text-white">
               Sign in to your account
             </h2>
-            <p className="mt-2 text-center text-sm text-gray-600 dark:text-gray-300">
+            <p className="mt-2 text-center text-sm text-slate-700 dark:text-white">
               Or{' '}
-              <a
-                href="#"
+              <Link
+                href="/register"
                 className="font-medium text-indigo-600 hover:text-indigo-500"
               >
-                start your 14-day free trial
-              </a>
+                start your 1-month free trial
+              </Link>
             </p>
           </div>
           <form
@@ -68,7 +72,7 @@ export default function Login() {
                 <input
                   id="username"
                   name="username"
-                  type="username"
+                  type="text"
                   autoComplete="username"
                   required
                   className="relative block w-full rounded-t-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-400 dark:text-gray-300 sm:text-sm sm:leading-6"

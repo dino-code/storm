@@ -16,4 +16,37 @@
   .dark .text-default {
     color: white;
   }
+
+  /* Default text color with extra-small text size */
+  .text-default-xs {
+    @apply text-default text-xs;
+  }
+
+  /* Dark mode variant of text-default-xs */
+  .dark .text-default-xs {
+    color: white;
+    @apply text-xs;
+  }
+
+  /* Default text color with large text size */
+  .text-default-lg {
+    @apply text-default text-lg;
+  }
+
+  /* Dark mode variant of text-default-lg */
+  .dark .text-default-lg {
+    color: white;
+    @apply text-lg;
+  }
+
+  /* Default text color with extra-large text size */
+  .text-default-xl {
+    @apply text-default text-xl;
+  }
+
+  /* Dark mode variant of text-default-xl */
+  .dark .text-default-xl {
+    color: white;
+    @apply text-xl;
+  }
 }
