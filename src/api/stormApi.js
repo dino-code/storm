@@ -21,7 +21,7 @@ export const stormApi = createApi({
     }),
     login: builder.mutation({
       query: (credentials) => ({
-        url: '/login/',
+        url: 'login/',
         method: 'POST',
         body: credentials,
       }),
