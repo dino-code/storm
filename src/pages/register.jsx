@@ -25,9 +25,9 @@ export default function Register() {
       const result = await registerUser(data).unwrap()
       // Handle successful registration, e.g., redirecting to a new page
       setUser({
-        accessToken: result.access,
         user: result.user,
-        refreshToken: result.refresh,
+        accessToken: result.access_token,
+        refreshToken: result.refresh_token,
       })
       // Redirect the user to the dashboard or another authenticated page
       router.push('/dashboard')
@@ -42,7 +42,7 @@ export default function Register() {
   return (
     <>
       <Head>
-        <title>Sign Up - STORM</title>
+        <title>Sign Up - Storm</title>
       </Head>
       <AuthLayout>
         <div className="flex flex-col">
