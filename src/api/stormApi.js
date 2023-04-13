@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 const devBaseUrl = 'http://127.0.0.1:8000/'
-const prodBaseUrl = 'http://104.131.165.26:8000/'
+const prodBaseUrl = 'https://storm-srv-qk9xv.ondigitalocean.app/'
 const baseUrl = prodBaseUrl
 
 export const stormApi = createApi({
