@@ -12,27 +12,26 @@ export const stormApi = createApi({
     credentials: 'include',
     headers: {
       'Content-Type': 'application/json',
-      origin: window.location.origin,
     },
   }),
   endpoints: (builder) => ({
     registerUser: builder.mutation({
       query: (data) => ({
-        url: 'register/',
+        url: 'register',
         method: 'POST',
         body: data,
       }),
     }),
     login: builder.mutation({
       query: (credentials) => ({
-        url: 'login/',
+        url: 'login',
         method: 'POST',
         body: credentials,
       }),
     }),
     logout: builder.mutation({
       query: ({ accessToken, refreshToken }) => ({
-        url: 'logout/',
+        url: 'logout',
         method: 'POST',
         headers: {
           Authorization: `Bearer ${accessToken}`,
