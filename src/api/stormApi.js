@@ -8,8 +8,12 @@ export const stormApi = createApi({
   reducerPath: 'stormApi',
   baseQuery: fetchBaseQuery({
     baseUrl: baseUrl,
-    credentials: 'include', // include cookies in requests
-    mode: 'cors', // allow cross-origin requests
+    mode: 'cors',
+    credentials: 'include',
+    headers: {
+      'Content-Type': 'application/json',
+      origin: window.location.origin,
+    },
   }),
   endpoints: (builder) => ({
     registerUser: builder.mutation({
