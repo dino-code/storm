@@ -6,7 +6,12 @@ const baseUrl = prodBaseUrl
 
 export const stormApi = createApi({
   reducerPath: 'stormApi',
-  baseQuery: fetchBaseQuery({ baseUrl: baseUrl }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: baseUrl,
+    credentials: 'include', // include cookies in requests
+    mode: 'cors', // allow cross-origin requests
+    body: args.body ? JSON.stringify(args.body) : undefined,
+  }),
   endpoints: (builder) => ({
     registerUser: builder.mutation({
       query: (data) => ({
