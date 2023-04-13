@@ -10,26 +10,25 @@ export const stormApi = createApi({
     baseUrl: baseUrl,
     credentials: 'include', // include cookies in requests
     mode: 'cors', // allow cross-origin requests
-    body: args.body ? JSON.stringify(args.body) : undefined,
   }),
   endpoints: (builder) => ({
     registerUser: builder.mutation({
       query: (data) => ({
-        url: 'api/register/',
+        url: 'register/',
         method: 'POST',
         body: data,
       }),
     }),
     login: builder.mutation({
       query: (credentials) => ({
-        url: '/api/login/',
+        url: '/login/',
         method: 'POST',
         body: credentials,
       }),
     }),
     logout: builder.mutation({
       query: ({ accessToken, refreshToken }) => ({
-        url: 'api/logout/',
+        url: 'logout/',
         method: 'POST',
         headers: {
           Authorization: `Bearer ${accessToken}`,
