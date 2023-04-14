@@ -18,6 +18,7 @@ import {
 } from '@heroicons/react/24/outline'
 import { LogoIcon } from './LogoIcon'
 import { useUser } from '@/contexts/UserContext'
+import Link from 'next/link'
 
 const navigation = [
   { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
@@ -281,7 +282,7 @@ const AuthenticatedHeader = () => {
                     {userNavigation.map((item) => (
                       <Menu.Item key={item.name}>
                         {({ active }) => (
-                          <a
+                          <Link
                             href={item.href}
                             className={classNames(
                               active ? 'bg-slate-100 dark:bg-slate-800' : '',
@@ -290,7 +291,7 @@ const AuthenticatedHeader = () => {
                             onClick={item.onClick ? () => item.onClick() : null}
                           >
                             {item.name}
-                          </a>
+                          </Link>
                         )}
                       </Menu.Item>
                     ))}

@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>STORM - Entreprenurship made organized</title>
+        <title>Storm - Entreprenurship made organized</title>
         <meta
           name="description"
           content="No more keeping track of emails, appointments, contacts, and leads. We provide the tools you need to focus on changing the world."

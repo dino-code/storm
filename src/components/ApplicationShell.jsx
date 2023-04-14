@@ -31,10 +31,6 @@ const teams = [
   { id: 2, name: 'Tailwind Labs', href: '#', initial: 'T', current: false },
   { id: 3, name: 'Workcation', href: '#', initial: 'W', current: false },
 ]
-const userNavigation = [
-  { name: 'Your profile', href: '#' },
-  { name: 'Sign out', href: '#' },
-]
 
 export default function ApplicationShell({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
