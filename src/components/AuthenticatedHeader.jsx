@@ -19,6 +19,7 @@ import {
 import { LogoIcon } from './LogoIcon'
 import { useUser } from '@/contexts/UserContext'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const navigation = [
   { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
@@ -38,7 +39,9 @@ const AuthenticatedHeader = () => {
   const { setUser } = useUser()
   const user = useAuth()
   const [logout, { isLoading }] = useLogoutMutation()
+  const router = useRouter()
   console.log(user)
+
   const handleLogout = async () => {
     try {
       const refreshToken = // Get the refresh token from your storage
@@ -47,6 +50,7 @@ const AuthenticatedHeader = () => {
           refreshToken: user?.refreshToken,
         }).unwrap()
       setUser(null)
+      //router.push('/')
       // Remove the tokens from your storage
       // Redirect the user to the login page
     } catch (error) {
@@ -56,7 +60,7 @@ const AuthenticatedHeader = () => {
 
   const userNavigation = [
     { name: 'Your profile', href: '#' },
-    { name: 'Sign out', href: '#', onClick: handleLogout },
+    { name: 'Sign out', href: '/', onClick: handleLogout },
   ]
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
