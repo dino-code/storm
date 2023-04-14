@@ -21,9 +21,9 @@ export default function Login() {
     try {
       const response = await login({ username, password }).unwrap()
       setUser({
-        accessToken: response.access,
         user: response.user,
-        refreshToken: response.refresh,
+        accessToken: response.access_token,
+        refreshToken: response.refresh_token,
       })
       // Redirect the user to the dashboard or another authenticated page
       router.push('/dashboard')
